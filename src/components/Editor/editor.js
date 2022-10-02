@@ -1,24 +1,15 @@
-import React, {
-  useState,
-  useCallback,
-  useMemo,
-} from "react";
+import React, { useState, useCallback, useMemo } from "react";
 
-import {
-  Editor,
-  createEditor,
-} from "slate";
+import { Editor, createEditor } from "slate";
 // Import the Slate components and React plugin.
-import { Slate, Editable, withReact, useSlate,  } from "slate-react";
+import { Slate, Editable, withReact, useSlate } from "slate-react";
 import "./editor.css";
 import { FaHighlighter } from "react-icons/fa";
 import Person from "../../assets/person.jpg";
 function TextEditor(props) {
-
   const editor = useMemo(() => withReact(createEditor()), []);
   const renderLeaf = useCallback((props) => <Leaf {...props} />, []);
   const [high, setHigh] = useState("");
- 
 
   const toggleMark = (editor, format) => {
     const isActive = isMarkActive(editor, format);

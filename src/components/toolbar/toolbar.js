@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 
 import Font from "../../assets/Vector (3).png";
 import Left from "../../assets/Vector (4).png";
@@ -9,38 +9,32 @@ import Link from "../../assets/Vector (8).png";
 import Image from "../../assets/Vector (9).png";
 import Emoji from "../../assets/Vector (10).png";
 import Plus from "../../assets/Vector(11).png";
-import EmojiPicker from "emoji-picker-react";
-import {Button, Form, Modal} from "react-bootstrap"
-import {
-  Editor,
-  Transforms,
-  createEditor,
-  Descendant,
-  Element as SlateElement,
-} from "slate";
-import { Slate, Editable, withReact, useSlate } from "slate-react";
-import "./toolbar.css";
-function Toolbar({toggleMark, isMarkActive,isBlockActive,toggleBlock,onPlusClick,setWebLink,setLinkText}) {
-    const TEXT_ALIGN_TYPES = ["left", "center", "right", "justify"];
-    const editor=useSlate();
-    console.log(editor);
-    const [show,setShow]=useState(false);
-    const [text,setText]=useState("");
-    const [link,setLink]=useState("");
 
- 
-function openModal(){
-setShow(true);
-}
-function closeModal(){
-  setShow(false);
-}
+
+import {  useSlate } from "slate-react";
+import "./toolbar.css";
+function Toolbar({
+  toggleMark,
+  isMarkActive,
+  isBlockActive,
+  toggleBlock,
+  onPlusClick,
+  
+}) {
+  const TEXT_ALIGN_TYPES = ["left", "center", "right", "justify"];
+  const editor = useSlate();
+  console.log(editor);
+
+
+  
 
   const MarkButton = ({ format, icon }) => {
     const editor = useSlate();
     return (
       <button
-        className={isMarkActive(editor,format)?`toolbar_icon active`:"toolbar_icon"}
+        className={
+          isMarkActive(editor, format) ? `toolbar_icon active` : "toolbar_icon"
+        }
         onMouseDown={(event) => {
           event.preventDefault();
           toggleMark(editor, format);
@@ -50,8 +44,6 @@ function closeModal(){
       </button>
     );
   };
-
-  
 
   const BlockButton = ({ format, icon }) => {
     const editor = useSlate();
@@ -67,25 +59,14 @@ function closeModal(){
           toggleBlock(editor, format);
         }}
       >
-    {icon}
+        {icon}
       </button>
     );
   };
-  function handleChange(e){
-    e.preventDefault();
-    const {name,value}=e.target;
-    if(name=="link"){
-      setLink(value);
-    }
-    if(name=="text"){
-      setText(value);
-    }
-  }
-
+ 
 
   return (
     <div className="toolbar_main">
-     
       <div className="left_half">
         <MarkButton format="bold" icon="B"></MarkButton>
         <MarkButton format="italic" icon="i"></MarkButton>
@@ -134,7 +115,6 @@ function closeModal(){
         <img
           onClick={(e) => {
             e.preventDefault();
-            
           }}
           src={Link}
           alt="link-icon"
