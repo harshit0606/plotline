@@ -1,0 +1,33 @@
+.toolbar_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 45px;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FAFBFC;
+    border:1px solid rgb(231, 231, 231);
+    border-radius: 3px;
+    margin-bottom: 50px;
+}
+.left_half{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   flex:0.35;
+   
+}
+.right_half{
+    flex:0.65;
+}
+.toolbar_icon{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+   color:rgba(52, 69, 99, 0.7);
+    font-size: 18px;
+}
+.active{
+    color:black;
+}

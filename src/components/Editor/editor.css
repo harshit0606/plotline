@@ -1,0 +1,45 @@
+.editor_main{
+    width:50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#F4F5F7;
+    padding:10px 20px 20px 20px;
+}
+.editor_main h4{
+    text-align: left;
+    color: #091E42;
+    opacity: 0.8;
+}
+.speaker_div{
+    position: relative;
+    margin-bottom: 30px;
+}
+.icon_btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    position:absolute;
+    top:0px;
+    right:20px;
+
+}
+.tags{
+    position: absolute;
+    right:-240px;
+    top:40px;
+    background-color: pink;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 200px;
+}
+.speaker_div img{
+    height: 40px;
+    width:40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.avatar_div{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
